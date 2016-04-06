@@ -1,0 +1,86 @@
+Windows has "FC" utility to compare two files and Unix has "diff".
+ 
+ I can open the text editor (in my case, sublime-text) via command line. The command for opening sublime-text is "subl".
+ 
+ I always wondered as in how to create a new file in a directory, via command line. I always used to do the usual way, ie go to the text-editor, create a new file and then go to the present directory and save it. Now I can just locate to the present directory and fire "subl filename" and viola, a new file is created.
+ 
+ The reason to keep the lines short in a code, is because, while comparing the lines in two separate files of code, it would easier to find the difference.
+ 
+ QUE 1: How did viewing a diff between two versions of a file help you see the bug that was introduced?
+ 
+ ANS 1: When we compare the two versions of a file, we are doing it for the obvious reason that something is not right. Something is not working correctly. Mostly so. While seeing the difference, we can exactly pin-point the location, where the bug might have been introduced, by seeing the difference between the two pieces of code. we can reason it out and thus remove the bug.
+ 
+ Wikipedia stores the different versions and I can compare the two versions also.
+ 
+ QUE 2: How could having easy access to the entire history of a file make you a more efficient programmer in the long run?
+ 
+ ANS 2: I can see the flow of the program write from the beginning, how it has evolved and change during the course of the time. I can see the way, different people who have worked on it, and the way, they have worked on it, and how it has influenced the program. The bottlenecks thta has been faced, the bugs that have been corrected by others.
+ 
+ GIT was designed by Mr.Linus Torvalds and basically means, an unplesant person.
+
+ User created check-points in GIT are called "Commits". Commits are the basic building blocks of GIT. Each commit represents a version of the content at one point of time. Commit message are required to be made by the user, on every commit.
+
+ Dropbox stores the versions of the file of last 30 days only.
+
+ GIT LOG 
+ 	Git Log for a GIT shows the details of every commit that has been ever made. It shows commit ID, author name, date and message .
+
+GIT DIFF 
+	Git Diff compares the two different commits (provided with the help of ID) and displays the difference, in a colorised version.
+
+HOW OFTEN TO COMMIT:
+	 A good thumb rule is to make one commit per logical change. Thus every commit will have a purpose, that could be easily understood. 
+
+QUE 3: What do you think are the pros and cons of manually choosing when to create a commit, like you do in GIT, vs having versions automatically saved, like Google does?
+ANS 3: 
+
+	PROS:	a. Lesser number of versions and hence easier to compare.
+			b. I can put proper messages across in each commit and that shall make sense, later on. If there are too many versions, created by automatic versioning, first there are no messages itself.
+	
+	CONS:	a. I may forget to commit, when some logical change has been made.
+
+A collection of files that are tracked by GIT cohesively is called REPOSITORY. When a commit is made, it saves the every file in the repository.
+
+git log --stat gives the detailed information about which files have changes during the commit.
+
+QUE 4: Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file seprately?
+
+ANS 4: It  is because in Git, if a change is made in one file of the repository, it may affect the other files also and hence to have complete picture and to compare, it is necessary to have the version of all the files, at any given moment.
+
+GIT CLONE: It copies the entire copy of the repository from one computer to another, this includes the history also.
+"git config --global color.ui auto" changes the color scheme of the UI. Different aspects are shown in different colours. --global ensures that it applies to all the git projects and not only the current one.
+
+The command for Git Diff is "git diff first_id second_id".
+
+In GIT LOG command, the Git which is on topmost shown is the most recent version(so obvious, isnt it), and the next one down to it, is the previous one, so on and so forth.
+
+QUE 5: How can you use the commands git log and git diff to view the history of files?
+
+ANS 5: 
+		GIT LOG shows us all the different commits made,withe the most recent commit on top, with the message and the time stamp. With this we can come to know, when a logical change was made and when.
+		
+		GIT DIFF allows us to compare the two files and see how many changes additions or deletions have been made and what exactly these changes have been.
+
+GIT CHECKOUT means re-storing to the previous version.  
+
+QUE 6: How might using version control make you more confident to make changes that could break something?
+
+ANS 6: I am more confident because Git is there. Even if something breaks, I can always CHECKOUT and hence restore the things. I am not afraid any more to experiment. Its like having NO FEAR.
+
+If I am in a directory and I have to a file in the present directory itself then, in the location command, I would just type the file name.
+Eg: mv Downloads/git-completion.bash gitcompletion.bash
+
+If I need to change the file name, after moving it to the present directory I am then:
+Eg: mv Downloads/bash_profile_course .bashrc
+
+QUE 7: Now that you have your workspace set up, what do you want to try using Git for?
+
+ANS 7: Tracking my code-base.
+
+For copying a directory,it is possible to copy a directory from one computer to another using the command scp, which stands for "secure copy". The name was chosen because the scp command lets you securely copy a directory from one computer to another. 
+
+git log lists the most recent commit first, as you can verify by checking the commit dates. 
+
+git diff considers the first argument as the "original", and the second argument as the "new" version, so additions are lines present in the second argument but not the first.
+
+TIL : If you are in a different commit ie DETACHED HEAD state and you want to compare another commit, you need to just git diff "commit with which you want to compare" ie only one argument.
