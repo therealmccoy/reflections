@@ -1,0 +1,20 @@
+GIT Repositories are different from other repositories that they store a bunch of meta data about the history of repository.
+
+The history is store in the directory called .git, which is hidden. 
+
+TIL: Hidden files and directories start with a period, which tells the OS to hide them.
+
+GIT INIT is the command to create a new repository.
+
+When you initialize the repository, Git doesn’t create any commits for you. You’ll have to create the first commit yourself.
+
+GIT STATUS command shows which files have changed since last commit.
+
+QUE 1: What happens when you initialize a repository? Why do you need to do it?
+
+ANS 1: When I initialise a repository, Git creates a snapshot of that repository. We need to do it, so as to proceed with the tracking of files.
+
+Staging Area is the intermediate step before the commit. Git adds all the files to the statging area, before commit is made. All the files added in the staging area are then compiled as a single commit, when the commit is made.
+
+The files are added via GIT ADD command. All the files which have been added are now tracked.
+
