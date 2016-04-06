@@ -35,5 +35,58 @@ Now when I typed git commit, the editor opened in a new window asking me for com
 
 ** The standard Git practice is to write a commit message, as if it were a command.
 
+If there would be nothing to commit, then the command git commit would show "nothing to commit, directory is clean".
+
+git diff : compares working directory and staging area
+
+git diff --staged : compares staging area and commit1
+
+git diff coomit1 commit2 : compares two commits
+
+QUE 2: How can you use the staging area to make sure you have one commit per logical change?
+
+ANS 2: We can check how many files are there in the staging area and then do git diff --staged and if there are more than one logical change, then we do different commits by removing the extra files from staging area.
+
+Linear structure for commits is good for fixing bugs, new features and updating documents.
+
+MASTER is the name given to the main branch in most repositories.
+	Eevry time a repository is created, it creates a master branch.
+
+Labels for commits are called BRANCHES.
+
+Branches can be checked out. If a branch is checked-out and a new commit is made, the label automatically adjusts to the new commit. The master branch also automatically checks out, without separately checking it out.
+
+Current last commit of the branch is called the TIP of the branch.
+
+Process of combining two commits is called merging.
+
+GIT BRANCH is the command to create a new branch with arguments. Without arguments it shows the branches in the repository currently.
+
+The asterisk mark in front of the master, when git branch command is made means that it is the current branch which has been checked out, ie any change made would reflect in that branch.
+
+QUE 3: What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+ANS 3: Situations like, testing a new experiment or an idea. It helps because I can test the new feature, without tinkering with the original codebase. Essentially, it helps me in making a sandbox, wherein I can test. And if it works,I can add it to the main codebase, or discard it.
+
+So MASTER branch basically is the production code, which never breaks and then there is a BRANCH like developmental, where all the experiment is going on.
+
+BRANCHES are good in compartmentalising the work which one is doing. They are like drawers.
+
+You can close one drawer, and open the next one to start working on it.
+
+Good way to wok in case of projects where multiple people are working is to have a new branch for each bug-fix or feature.
+
+REMOTE BRANCH means some one else has created this branch.
+
+git log --graph --oneline master
+
+REACHABILITY : Whether a commit is reachable or not. Move from recent commit to a commit which does not have a parent.
+
+DETACHED HEAD: Checkout a commit, it is detached from a branch, because the commit was checked out and not the branch. Any commit made in this state can be thus discarded without impacting any of the branches.
+
+	git checkout -b new_branch_name
+
+
+
 
 
