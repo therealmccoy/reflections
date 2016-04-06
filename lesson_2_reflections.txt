@@ -18,3 +18,22 @@ Staging Area is the intermediate step before the commit. Git adds all the files 
 
 The files are added via GIT ADD command. All the files which have been added are now tracked.
 
+QUE 2: How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+ANS 2: Working directory is the directory where we are working, it lists all the files present in the directory. We might not be working on all the files, or may even need them.
+A repository similarily would have different directories, containing different files, we might not be working on all of them.
+Staging area gives us the list of all the files, on which work has been done, but the changes are not committed. So we can know, on which files, the work has been going on since the last commit.
+
+git commit and allow you to write a commit message.
+
+	commit message via the command line by running git commit -m "Commit message" instead of just git commit.
+
+As soon as I typed git commit for the first time in the repository, I was prompted to tell about my user.email and user.name; which I did.
+It then showed me the various options for git configuration:
+
+Now when I typed git commit, the editor opened in a new window asking me for commit message.
+
+** The standard Git practice is to write a commit message, as if it were a command.
+
+
+
