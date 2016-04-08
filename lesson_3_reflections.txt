@@ -48,3 +48,38 @@ A REMOTE in the local repository, is basically a reference to another repository
 
 When a repository os cloned, a remote is set up automatically. So CLONE operates on REMOTE.
 
+QUE 2: Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
+
+ANS 2: This is so that I may have control, when to pull contents created or added by others into my own codebase.
+
+FORKING is making a copy of someone else's work on GitHub servers, before downloading it the local repository.
+
+When a CLONE is made, not only a remote ORIGIN is created in the local repository but it also points to the repository from where it was cloned.
+
+QUE 3: Describe the differences between forks, clones, and branches. When would you use one instead of another?
+
+ANS 3: FORK: When we copy someone else's work on GitHub servers, before downloading it to our local repository. It is very similar to CLONE. Essentially cloning the work on GitHub's server itself.
+
+CLONES: When we copy some codebase from GitHub's servers to our local repository.
+
+BRANCH: Branch is kind of essentially local cloning in the repository itself.
+
+When we just want to have a look at the different files or some codebase of a repository, we FORK it.
+
+When we want to make changes to that codebase, which has been FORKED, we CLONE it.
+
+When we want to experimentally work on local repository, we BRANCH it.
+
+GIT FETCH updates the local copy of the remote branch, leaving the original local master branch as it is.
+
+git pull origin master == git fetch origin + git merge master origin/master
+
+ORIGIN/MASTER shall point to the commit, which was there in the repository, when it was cloned. If I make any other commit, it becomes my MASTER branch.
+
+The commit made by any other collaborator on the  GitHub would point towards the commit already there.
+
+FAST FORWARD MERGE: Criteria: The branch we are merging INTO is an ancestor of the branch we are merging FROM.
+
+QUE 4: What is the benefit of having a copy of the last known state of the remote stored locally?
+
+ANS 5: We can always do GIT LOG and GIT DIFF and then find out the changes/updates.
