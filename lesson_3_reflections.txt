@@ -1,3 +1,50 @@
 GITHUB is a website which makes it easier for anyone to share their entire repository.
 
-When interacting with GitHub, the information whcih we send and receive are in the form of Git commits.
+When interacting with GitHub, the information whcih we send and receive are in the form of Git commits.Hence, the changes must be staged and committed before they can be sent.
+
+If there is only one remote in the repository, then it is standard to name it as ORIGIN.
+
+GIT REMOTE is the command to create a new remote:
+
+	git remote add origin https://github.com/therealmccoy/reflections.git
+
+git remote -v
+
+	-v stands for verbose, which means git would now supply more information about the remote.
+
+In most cases the (fetch) and (push) url of the remote would be the same.
+
+In order to send the changes to remote, the command used is GIT REMOTE. It takes two arguments, the remote where the changes need to be pushed and the name of the local branch which is to be pushed.
+
+	git push origin master
+
+By default the name of the branch pushed to remote on Guthub would also have the same name.
+
+TIL: When creating an empty repository on GitHub, it is important to keep it clean, without adding any Read.me or license, if the local repository, does not have it, else, the first push would not work, since remote has some files, which are not present locally, and hence first the files need to be fetched.
+
+TIL: Even though, if remote is deleted on Github and a new repository with the same name is created again, the remote locally would not point it to that url, unless, the url is set via:
+
+	git remote set-url origin git://new.url.here
+
+TIL: Saving Github credentials in Git
+
+	Turn on the credential helper so that Git will save your password in memory for some time. By default, Git will cache your password for 15 minutes.
+
+    On the command line, enter the following:
+
+    git config --global credential.helper cache
+    # Set git to use the credential memory cache
+
+    To change the default password cache timeout, enter the following:
+
+    git config --global credential.helper 'cache --timeout=3600'
+    # Set the cache to timeout after 1 hour (setting is in seconds)
+
+QUE 1: When would you want to use a remote repository rather than keeping all your work local?
+
+ANS 1: When I would like to share my codebase with some one else or when there are multiple collaborators on my project.
+
+A REMOTE in the local repository, is basically a reference to another repository.
+
+When a repository os cloned, a remote is set up automatically. So CLONE operates on REMOTE.
+
