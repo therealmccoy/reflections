@@ -1,0 +1,3 @@
+GITHUB is a website which makes it easier for anyone to share their entire repository.
+
+When interacting with GitHub, the information whcih we send and receive are in the form of Git commits.

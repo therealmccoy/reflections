@@ -86,7 +86,62 @@ DETACHED HEAD: Checkout a commit, it is detached from a branch, because the comm
 
 	git checkout -b new_branch_name
 
+QUE 4: How do the diagrams help you visualize the branch structure?
 
+ANS 4: We can exactly see from where the branches diverged, what is the reachability and if there is any detached head or not. We can see what all different branches are there.
+
+When a commit is created about two merged commits, it stores information about both of its parents. The new tip of the two branches, would be the tip of the master branch. A branch is always MERGED INTO the Master branch.
+
+After the merger, the master branch would inlcude all the all the changes that it had before the merger and the changes of the new merged branch.
+
+Once the merger is completed, we do not need the labels of the merged branch, and they can be deleted, the commits and the history would still be there.
+
+If a branch is deleted and leaves some commits unreachable from existing branches, those commits will continue to be accessible by commit id, until Git’s garbage collection runs. This will happen automatically from time to time, unless you actively turn it off. You can also run this process manually with git gc.
+
+git show shows the difference what changes were made between a commit and its parent, without knowing the parent.
+
+QUE 5: What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+ANS 5: Merging two branches creates a commit with changes made by both the branches. We represent it in the diagram like we do, in order to make it easy to understand the merged entities and their commit histories.
+
+ In general, it’s very common that if you make a branch, either an experimental branch or to work on a new feature, you want to periodically merge master into that branch. This is because master usually contains the official version of the code, and it’s common to want experimental changes to include all of the changes to master.
+
+ Merge would create a new commit with multiple parents, the multiple parents would be the current tip of the the merged branches.
+
+ If Master is being merged into a branch, then the merged would create a new commit, with two parents, with tips of the both the branches. Hence the new merged commit would point to both the existing branches as the parents. The label of the branch in which the Master is being merged, would move to the new commit.
+
+ MERGE CONFLICT happens if the same file and same portion of the file has been changed in the two commits being merged.
+
+ ** common ancestors - to practice
+
+ QUE 6: What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+ ANS 6: Manually merging is tedious but conflicts can be resolved. Automatic merging is easy but there could be errors, which could lead to bad codebase.
+
+ *** FROM GIT BOOK ***
+ ----------------------
+
+ So the commits numbers are essentially hash values, 40 digits in all, SHA1-hash.
+
+ Git has three main states that your files can reside in: committed, modified, and staged. Committed means that the data is safely stored in your local database. Modified means that you have changed the file but have not committed it to your database yet. Staged means that you have marked a modified file in its current version to go into your next commit snapshot.
+
+This leads us to the three main sections of a Git project: the Git directory, the working directory, and the staging area.
+
+The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
+
+The working directory is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
+
+The staging area is a file, generally contained in your Git directory, that stores information about what will go into your next commit. It’s sometimes referred to as the “index”, but it’s also common to refer to it as the staging area.
+
+The basic Git workflow goes something like this:
+
+    You modify files in your working directory.
+
+    You stage the files, adding snapshots of them to your staging area.
+
+    You do a commit, which takes the files as they are in the staging area and stores that snapshot permanently to your Git directory.
+
+If a particular version of a file is in the Git directory, it’s considered committed. If it has been modified and was added to the staging area, it is staged. And if it was changed since it was checked out but has not been staged, it is modified.
 
 
 
