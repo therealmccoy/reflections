@@ -91,3 +91,7 @@ ANS 6: It would be very hard. Using combination of email and server requests and
 QUE 7: When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?
 
 ANS 7: If there are too many changes and collaborators, it is helpful to work with branches, than messing master.
+
+when contributing to a public repository, it’s standard practice to make the changes in a non-master branch within the fork. This way, you can easily keep your master branch up-to-date with master of the original repository, and merge changes from master into your branch when you are ready.
+
+
