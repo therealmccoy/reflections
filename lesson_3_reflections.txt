@@ -83,3 +83,11 @@ FAST FORWARD MERGE: Criteria: The branch we are merging INTO is an ancestor of t
 QUE 4: What is the benefit of having a copy of the last known state of the remote stored locally?
 
 ANS 5: We can always do GIT LOG and GIT DIFF and then find out the changes/updates.
+
+QUE 6: How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+
+ANS 6: It would be very hard. Using combination of email and server requests and comments.
+
+QUE 7: When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?
+
+ANS 7: If there are too many changes and collaborators, it is helpful to work with branches, than messing master.
